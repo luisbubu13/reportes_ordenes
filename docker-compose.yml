@@ -1,0 +1,60 @@
+version: "3.9"
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+
+    container_name: reportes_web
+
+    restart: unless-stopped
+
+    ports:
+      - "9010:80"
+
+    volumes:
+      - ./:/var/www/html
+
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11.4
+
+    container_name: reportes_db
+
+    restart: unless-stopped
+
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: reportes_ordenes
+      TZ: America/Mexico_City
+
+    ports:
+      - "3308:3306"
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./admin/reportes_ordenes.sql:/docker-entrypoint-initdb.d/reportes_ordenes.sql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+
+    container_name: reportes_phpmyadmin
+
+    restart: unless-stopped
+
+    ports:
+      - "9011:80"
+
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+
+    depends_on:
+      - db
+
+volumes:
+  mariadb_data:

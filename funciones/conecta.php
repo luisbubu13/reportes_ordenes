@@ -4,9 +4,9 @@ date_default_timezone_set('America/Mexico_City');
 
 function conectar() {
 
-    $host = "localhost";
+    $host = "db";
     $user = "root";
-    $pass = "";
+    $pass = "root";
     $db   = "reportes_ordenes";
 
     $conexion = new mysqli($host, $user, $pass, $db);
