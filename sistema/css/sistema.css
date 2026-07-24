@@ -1,0 +1,190 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#eef2f6;
+}
+
+.contenedor{
+    width:95%;
+    margin:30px auto;
+}
+
+h1{
+    color:#23395d;
+    margin-bottom:25px;
+    font-size:30px;
+    font-weight:600;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+/*================= FILTROS =================*/
+
+.filtros{
+    display:grid;
+    grid-template-columns:repeat(4,1fr) 140px;
+    gap:18px;
+    align-items:end;
+}
+
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+
+.campo label{
+    margin-bottom:6px;
+    color:#555;
+    font-size:14px;
+    font-weight:600;
+}
+
+input,
+select{
+    height:42px;
+    border:1px solid #ced4da;
+    border-radius:6px;
+    padding:0 12px;
+    font-size:15px;
+    transition:.2s;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#2b7cff;
+    box-shadow:0 0 4px rgba(43,124,255,.3);
+}
+
+.autobus{
+    min-width:240px;
+}
+
+/*================= BOTONES =================*/
+
+.acciones{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    border:none;
+    border-radius:6px;
+    color:#fff;
+    cursor:pointer;
+    font-size:15px;
+    padding:11px 22px;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.buscar{ background:#0d6efd; }
+.nuevo{ background:#198754; }
+.modificar{ background:#ffc107; color:#212529; }
+.liberar{ background:#0dcaf0; color:#212529; }
+.cerrar{ background:#dc3545; }
+.reliberar{ background:#6610f2; }
+.cancelar{ background:#000; }
+
+/*================= TABLA =================*/
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#23395d;
+    color:#fff;
+}
+
+th{
+    padding:14px;
+    text-align:left;
+    font-weight:600;
+}
+
+td{
+    padding:13px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+tbody tr:hover{
+    background:#f5f8fb;
+}
+
+.sinDatos{
+    text-align:center;
+    color:#777;
+    padding:40px;
+}
+
+/*================= ESTADOS =================*/
+
+.estado{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:6px;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    text-transform:capitalize;
+}
+
+.estado-abierta{
+    background:#198754; /* verde */
+}
+
+.estado-liberada{
+    background:#0d6efd; /* azul */
+}
+
+.estado-cerrada{
+    background:#dc3545; /* rojo */
+}
+
+.estado-cancelada{
+    background:#000; /* negro */
+}
+
+input[type="checkbox"]{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/*================= RESPONSIVE =================*/
+
+@media(max-width:1100px){
+    .filtros{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+    .filtros{
+        grid-template-columns:1fr;
+    }
+
+    .acciones{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}

@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:#eef2f6;
+}
+
+/* CONTENEDOR */
+.contenedor-form{
+    width:90%;
+    max-width:1100px;
+    margin:30px auto;
+}
+
+h1{
+    color:#23395d;
+    margin-bottom:20px;
+}
+
+/* CARD FORM */
+.card{
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+/* GRID FORM */
+.formulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* CAMPOS */
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+
+.campo label{
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:600;
+    color:#555;
+}
+
+input,
+select,
+textarea{
+    height:42px;
+    border:1px solid #ced4da;
+    border-radius:6px;
+    padding:0 12px;
+    font-size:15px;
+    transition:.2s;
+    background:#fff;
+}
+
+textarea{
+    height:100px;
+    padding:10px 12px;
+    resize:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2b7cff;
+    box-shadow:0 0 4px rgba(43,124,255,.3);
+}
+
+/* OCUPA TODA LA FILA */
+.full{
+    grid-column:1 / -1;
+}
+
+/* BOTONES */
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:6px;
+
+    color:#fff;
+    text-decoration:none;
+
+    cursor:pointer;
+    font-size:15px;
+
+    padding:11px 22px;
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* COLORES */
+.nuevo{
+    background:#198754;
+}
+
+.cerrar{
+    background:#6c757d;
+}
+
+/* BOTONERA */
+.botones{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .formulario{
+        grid-template-columns:1fr;
+    }
+
+    .botones{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}

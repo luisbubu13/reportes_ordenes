@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#eef2f6;
+}
+
+.contenedor{
+    width:900px;
+    max-width:95%;
+    margin:30px auto;
+}
+
+h1{
+    color:#23395d;
+    margin-bottom:20px;
+}
+
+.card{
+    background:#fff;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.lista{
+    margin-top:15px;
+    margin-left:20px;
+}
+
+.lista li{
+    margin-bottom:8px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.botones{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    border:none;
+    border-radius:6px;
+    padding:12px 24px;
+    cursor:pointer;
+    color:white;
+    font-size:15px;
+}
+
+.guardar{
+    background:#198754;
+}
+
+.cancelar{
+    background:#dc3545;
+}

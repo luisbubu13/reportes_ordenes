@@ -1,0 +1,350 @@
+/* ==========================================================
+   REPORTEADOR
+========================================================== */
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eceff1;
+
+    opacity:0;
+    transition:opacity .6s ease;
+
+}
+
+body.visible{
+
+    opacity:1;
+
+}
+
+body.ocultar{
+
+    opacity:0;
+
+}
+
+/*==========================
+    CONTENEDOR
+==========================*/
+
+.contenedor{
+
+    width:100vw;
+    height:100vh;
+
+    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+/*==========================
+    ENCABEZADO
+==========================*/
+
+.encabezado{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr 200px;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:12px;
+
+}
+
+.encabezado h1{
+
+    margin:0;
+
+    font-size:36px;
+
+    color:#1f2937;
+
+    text-align:center;
+
+}
+
+#reloj{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#374151;
+
+    white-space:nowrap;
+
+}
+
+/*==========================
+    GRID
+==========================*/
+
+.grid{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    grid-template-rows:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+/*==========================
+    TARJETAS
+==========================*/
+
+.card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding:12px;
+
+    min-height:0;
+
+    border-radius:10px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+
+}
+
+/*==========================
+    TITULO
+==========================*/
+
+.titulo{
+
+    min-height:46px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#374151;
+
+    text-align:center;
+
+    line-height:1.3;
+
+}
+
+/*==========================
+    NUMERO
+==========================*/
+
+.numero{
+
+    margin:4px 0;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    color:#1976d2;
+    line-height:1;
+}
+
+/*==========================
+    DETALLE
+==========================*/
+
+.detalle{
+
+    width:100%;
+
+    flex:1;
+
+    overflow-y:auto;
+
+    margin-top:6px;
+
+    padding:0 4px;
+
+    font-size:17px;
+
+    color:#374151;
+
+    text-align:center;
+
+    line-height:1.45;
+
+    min-height:0;
+
+}
+
+.detalle div{
+
+    padding:2px 0;
+
+}
+
+.detalle::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.detalle::-webkit-scrollbar-thumb{
+
+    background:#9ca3af;
+
+    border-radius:10px;
+
+}
+
+.detalle::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================
+    PROMEDIO
+==========================*/
+
+.promedio{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:6px 10px;
+
+    background:rgba(255,255,255,.65);
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#374151;
+
+    text-align:center;
+
+}
+
+/*==========================
+    COLORES
+==========================*/
+
+.card.verde{
+
+    background:#e8f5e9;
+
+    border-left:12px solid #2e7d32;
+
+}
+
+.card.amarillo{
+
+    background:#fff8e1;
+
+    border-left:12px solid #f9a825;
+
+}
+
+.card.rojo{
+
+    background:#ffebee;
+
+    border-left:12px solid #c62828;
+
+}
+
+/*==========================
+    FOOTER
+==========================*/
+
+.footer{
+
+    margin-top:15px;
+
+    height:8px;
+
+}
+
+/*==========================
+    RESPONSIVE
+==========================*/
+
+@media(max-width:1200px){
+
+    .grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .encabezado{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    #reloj{
+
+        text-align:center;
+
+    }
+
+    .btnTelegram{
+
+        width:100%;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .numero{
+
+        font-size:58px;
+
+    }
+
+}

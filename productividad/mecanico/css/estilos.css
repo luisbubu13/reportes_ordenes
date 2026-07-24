@@ -1,0 +1,644 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+}
+
+body{
+
+    background:#eceff1;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+/*====================================
+    CONTENEDOR
+====================================*/
+
+.contenedor{
+
+    width:100%;
+    min-height:100vh;
+
+    padding:25px;
+
+}
+
+/*====================================
+    ENCABEZADO
+====================================*/
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.bienvenido{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#263238;
+
+}
+
+.btnSalir{
+
+    text-decoration:none;
+
+    background:#d32f2f;
+
+    color:#fff;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.btnSalir:hover{
+
+    background:#b71c1c;
+
+}
+
+/*====================================
+    GRID
+====================================*/
+
+main{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+    gap:25px;
+
+}
+
+/*====================================
+    TARJETA
+====================================*/
+
+.card{
+
+    background:#fff;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 14px rgba(0,0,0,.12);
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    min-height:220px;
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.16);
+
+}
+
+/*====================================
+    AUTOBÚS
+====================================*/
+
+.unidad{
+
+    text-align:center;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    color:#1565c0;
+
+    margin-top:10px;
+
+}
+
+/*====================================
+    BOTONES
+====================================*/
+
+.acciones{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    transition:.25s;
+
+    text-align:center;
+
+}
+
+.iniciar{
+
+    background:#2e7d32;
+
+}
+
+.iniciar:hover{
+
+    background:#1b5e20;
+
+}
+
+.pausar{
+
+    background:#ef6c00;
+
+}
+
+.pausar:hover{
+
+    background:#e65100;
+
+}
+
+.terminar{
+
+    background:#1565c0;
+
+}
+
+.terminar:hover{
+
+    background:#0d47a1;
+
+}
+
+/*====================================
+    SIN TRABAJOS
+====================================*/
+
+.vacio{
+
+    grid-column:1/-1;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:60px;
+
+    text-align:center;
+
+    font-size:30px;
+
+    color:#616161;
+
+}
+
+/*====================================
+    MODAL
+====================================*/
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+/*====================================
+    CONTENIDO MODAL
+====================================*/
+
+.modalContenido{
+
+    width:480px;
+
+    max-width:90%;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+    animation:aparecer .25s ease;
+
+}
+
+/*====================================
+    TÍTULO
+====================================*/
+
+.modalContenido h2{
+
+    margin-bottom:28px;
+
+    text-align:center;
+
+    color:#263238;
+
+    font-size:28px;
+
+}
+
+/*====================================
+    OPCIONES DE PAUSA
+====================================*/
+
+.opcionMotivo input{
+
+    display:none;
+
+}
+
+.opcionMotivo{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:15px 18px;
+
+    margin-bottom:12px;
+
+    border:2px solid #d9d9d9;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.20s;
+
+    user-select:none;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    background:#fff;
+
+    transform:translateY(0);
+
+}
+
+.opcionMotivo:hover{
+
+    background:#f5f9ff;
+
+    border-color:#1976d2;
+
+    transform:translateY(-2px);
+
+}
+
+.opcionMotivo span{
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+}
+
+.opcionMotivo span::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:22px;
+
+    margin-right:10px;
+
+}
+
+.opcionMotivo input:checked + span{
+
+    color:#1565c0;
+
+    font-weight:bold;
+
+}
+
+.opcionMotivo:has(input:checked){
+
+    background:#e8f2ff;
+
+    border-color:#1976d2;
+
+    box-shadow:0 4px 18px rgba(25,118,210,.25);
+
+}
+
+.opcionMotivo:has(input:checked) span::before{
+
+    content:"✔";
+
+    color:#1976d2;
+
+    font-weight:bold;
+
+}
+
+/*====================================
+    BOTONES DEL MODAL
+====================================*/
+
+.botonesModal{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+.botonesModal button{
+
+    padding:10px 22px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.20s;
+
+}
+
+#cancelarPausa{
+
+    background:#9e9e9e;
+
+    color:#fff;
+
+}
+
+#cancelarPausa:hover{
+
+    background:#757575;
+
+}
+
+#aceptarPausa{
+
+    background:#2196f3;
+
+    color:#fff;
+
+}
+
+#aceptarPausa:hover{
+
+    background:#1976d2;
+
+}
+
+#aceptarPausa:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    filter:grayscale(.25);
+
+}
+
+/*====================================
+    ANIMACIÓN MODAL
+====================================*/
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.90);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.estadoPausa{
+
+    margin-top:25px;
+
+    background:#fff3e0;
+
+    border-left:6px solid #ef6c00;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#e65100;
+
+    font-weight:bold;
+
+}
+
+/*====================================
+    RESPONSIVE
+====================================*/
+
+
+@media(max-width:700px){
+
+
+    .contenedor{
+
+        padding:15px;
+
+    }
+
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        text-align:center;
+
+    }
+
+
+    .bienvenido{
+
+        font-size:28px;
+
+    }
+
+
+    main{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .card{
+
+        padding:22px;
+
+    }
+
+
+    .unidad{
+
+        font-size:38px;
+
+    }
+
+
+    .acciones{
+
+        flex-direction:column;
+
+    }
+
+
+    .btn{
+
+        width:100%;
+
+        font-size:18px;
+
+    }
+
+
+    .modalContenido{
+
+        width:95%;
+
+        padding:22px;
+
+    }
+
+
+    .modalContenido h2{
+
+        font-size:23px;
+
+    }
+
+
+    .opcionMotivo{
+
+        font-size:16px;
+
+        padding:13px;
+
+    }
+
+
+    .botonesModal{
+
+        flex-direction:column;
+
+    }
+
+
+    .botonesModal button{
+
+        width:100%;
+
+    }
+
+
+}

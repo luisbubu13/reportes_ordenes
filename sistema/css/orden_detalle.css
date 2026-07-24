@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#eef2f6;
+}
+
+.contenedor{
+    width:90%;
+    margin:30px auto;
+}
+
+h1{
+    margin-bottom:20px;
+    color:#23395d;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    margin-bottom:20px;
+}
+
+/* ================= GRID INFO ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    font-size:14px;
+    color:#333;
+}
+
+/* ================= ESTADOS ================= */
+
+.estado{
+    padding:6px 10px;
+    border-radius:6px;
+    font-weight:600;
+    display:inline-block;
+    margin-top:5px;
+}
+
+.estado-abierta{
+    background:#d1e7dd;
+    color:#146c43;
+}
+
+.estado-liberada{
+    background:#cfe2ff;
+    color:#084298;
+}
+
+.estado-cerrada{
+    background:#f8d7da;
+    color:#842029;
+}
+
+.estado-cancelada{
+    background:#212529;
+    color:#fff;
+}
+
+/* ================= BOTÓN ================= */
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#23395d;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.regresar{
+    background:#6c757d;
+}
+
+/*================ ACCIONES =================*/
+
+.acciones{
+
+    display:flex;
+    gap:15px;
+
+}
+
+.nueva{
+
+    background:#198754;
+    color:#fff;
+
+}
+
+.mano{
+
+    background:#0d6efd;
+    color:#fff;
+
+}
+
+.eliminar{
+    background:#dc3545;
+}
+
+.eliminar:hover{
+    background:#bb2d3b;
+}
+
+/*================ REPARACIONES =================*/
+
+.tabla-reparaciones{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.tabla-reparaciones td{
+
+    padding:12px;
+    border-bottom:1px solid #ececec;
+
+}
+
+.tabla-reparaciones tr:hover{
+
+    background:#f8f9fa;
+
+}
+
+.col-check{
+
+    width:45px;
+    text-align:center;
+
+}
+
+.chk-reparacion{
+
+    width:18px;
+    height:18px;
+    cursor:pointer;
+
+}
+
+.vacio{
+
+    color:#777;
+    padding:15px;
+
+}
