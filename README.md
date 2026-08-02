@@ -19,7 +19,7 @@ Sistema web desarrollado en PHP y MariaDB para el control de órdenes de reparac
 
 ## Requisitos
 
-- Docker Desktop
+- Docker Desktop o Docker Engine y Docker Compose
 - Git
 
 ---
